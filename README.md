@@ -1,75 +1,173 @@
-# React + TypeScript + Vite
+# ResumeLens AI
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🚀 **ResumeLens AI** is an AI-powered resume analysis platform that helps job seekers evaluate their resumes against a target job description using OpenAI. It provides ATS compatibility insights, identifies skill gaps, offers actionable improvement suggestions, and includes an AI career assistant for resume optimization.
 
-Currently, two official plugins are available:
+🌐 **Live Demo:**  https://resume-analyser-psi-ochre.vercel.app/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## ✨ Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- 📄 Upload and analyze PDF resumes
+- 🤖 AI-powered resume evaluation using OpenAI
+- 📊 Resume-to-Job Description match score
+- ✅ ATS compatibility analysis
+- 🎯 Skill gap identification
+- 💡 Personalized resume improvement suggestions
+- 💬 AI Career Assistant for resume optimization and career guidance
+- 📱 Responsive modern interface
+- 🔒 Secure backend API with Vercel Serverless Functions
+- 🔑 API keys securely stored using environment variables
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🛠️ Tech Stack
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Frontend
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- React 19
+- TypeScript
+- Vite
+- Tailwind CSS
+- Lucide React
 
+### Backend
+
+- Vercel Serverless Functions
+- OpenAI API
+
+### Deployment
+
+- Vercel
+
+---
+
+## 📂 Project Structure
+
+```text
+resume-lens-ai/
+│
+├── api/
+│   ├── analyze.js
+│   └── chat.js
+│
+├── public/
+│
+├── src/
+│   ├── App.tsx
+│   ├── main.tsx
+│   ├── index.css
+│   └── assets/
+│
+├── package.json
+├── vite.config.ts
+├── tsconfig.json
+├── .gitignore
+└── README.md
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🚀 Installation
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Clone the repository
 
+```bash
+git clone https://github.com/RashneemaAmeen/resumeAnalyser.git
+
+cd ResumeLens-AI
 ```
+
+### Install dependencies
+
+```bash
+npm install
+```
+
+---
+
+## 🔑 Environment Variables
+
+Create a `.env` file in the project root.
+
+```env
+OPENAI_API_KEY=your_openai_api_key
+```
+
+**Do not commit your `.env` file to GitHub.**
+
+---
+
+## ▶️ Running Locally
+
+Since the application uses Vercel Serverless Functions, run:
+
+```bash
+vercel dev
+```
+
+For frontend-only development:
+
+```bash
+npm run dev
+```
+
+---
+
+## 📦 Build
+
+```bash
+npm run build
+```
+
+---
+
+## ☁️ Deployment
+
+This project is designed for deployment on **Vercel**.
+
+Required Environment Variable:
+
+```text
+OPENAI_API_KEY
+```
+
+---
+
+## 🎯 How It Works
+
+1. Upload a PDF resume.
+2. Paste a target Job Description.
+3. ResumeLens AI extracts the resume content.
+4. OpenAI analyzes:
+   - ATS compatibility
+   - Resume-to-JD match
+   - Missing skills
+   - Resume strengths
+   - Improvement recommendations
+5. The AI Career Assistant helps further optimize the resume.
+
+---
+
+## 📈 Future Enhancements
+
+- User authentication
+- Resume history
+- Downloadable PDF reports
+- Multiple resume management
+- Cover Letter Generator
+- Interview Question Generator
+- LinkedIn Profile Analyzer
+- Support for DOCX resumes
+- Multi-language support
+
+---
+
+## 🔒 Security
+
+- API keys are never exposed to the frontend.
+- All OpenAI requests are routed through secure Vercel Serverless Functions.
+- Environment variables are used for sensitive credentials.
+
+---
